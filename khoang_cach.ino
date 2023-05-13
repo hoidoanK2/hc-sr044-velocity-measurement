@@ -1,7 +1,5 @@
 const int trig = 8;     // chân trig của HC-SR04
 const int echo = 7;     // chân echo của HC-SR04
-int period = 200;
-unsigned long time_now = 0;
 float data_distance[2] = {0.0, 0.0};
 
 void setup()
@@ -42,8 +40,5 @@ void loop()
     
     Serial.print(velocity);
     Serial.println("cm/s");
-    // delay(100);
-    while(millis() < time_now + period){
-        //wait approx. [period] ms
-    }
+    delay(100);
 }
