@@ -40,5 +40,5 @@ void loop()
     
     Serial.print(velocity);
     Serial.println("cm/s");
-    delay(100);
+    delay(200);
 }
