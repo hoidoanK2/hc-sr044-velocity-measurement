@@ -7,6 +7,9 @@ void setup()
     Serial.begin(9600);     // giao tiếp Serial với baudrate 9600
     pinMode(trig,OUTPUT);   // chân trig sẽ phát tín hiệu
     pinMode(echo,INPUT);    // chân echo sẽ nhận tín hiệu
+    pinMode(2, OUTPUT);
+    pinMode(5, OUTPUT);
+    pinMode(4, OUTPUT);
 
 }
 
@@ -34,7 +37,24 @@ void loop()
     // Tính toán vận tốc
     float dis_2 = data_distance[1];
     float dis_1 = data_distance[0];
-    float velocity = (dis_1 - dis_2) / 0.2;
+    float velocity = (dis_1 - dis_2) / 0.205;
+
+    // Hiển thị đèn
+    if (abs(velocity)>50){
+        digitalWrite(2, 1);
+        digitalWrite(5, 0);
+        digitalWrite(4, 0); 
+    }
+    else if (abs(velocity)<3){
+        digitalWrite(2, 0);
+        digitalWrite(5, 1);
+        digitalWrite(4, 0); 
+    }
+    else {
+        digitalWrite(2, 0);
+        digitalWrite(5, 0);
+        digitalWrite(4, 1); 
+    }
 
     /* In kết quả ra Serial Monitor */
     
