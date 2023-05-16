@@ -1,6 +1,5 @@
 import serial
 import time
-import os
 
 project_path = r"D:\hc-sr04"
 Dataserial = serial.Serial('COM3', 9600)
@@ -24,6 +23,6 @@ while not done:
     data = data.strip('cm/s')
     f.write(f"{i} ")
     f.write(f"{data}\n")
-    i +=1
+    i += 0.05
     
 f.close() 
