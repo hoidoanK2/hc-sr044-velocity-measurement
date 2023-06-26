@@ -24,11 +24,11 @@ x = np.arange(len(y))
 
 
 plt.subplot(2,1,1)
-plt.plot(x,z,'yo-')
+plt.plot(x,z,'.', linestyle='--')
 plt.title('input signal')
 plt.xlabel('time')
 plt.subplot(2,1,2)
-plt.plot(x,y,'yo-')
+plt.plot(x,y,'.', linestyle='--')
 plt.title('filtered signal')
 plt.xlabel('time')
 plt.show()
