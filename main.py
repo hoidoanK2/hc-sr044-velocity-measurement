@@ -1,18 +1,21 @@
 import serial
 import time
 
+# Connect to Serial
 Dataserial = serial.Serial('COM3', 9600)
 print(Dataserial)
 time.sleep(1)
-
 done = False
 
-file = input("Nhập tên file: ")
+# Đặt tên file
+file = input("Đặt tên file: ")
 
 i = 0
 f = open(f"{file}.txt", "w")
 while not done:
-    
+    """
+    Viết data vận tốc vào 1 file text
+    """
     while Dataserial.inWaiting() == 0:
         pass
     data = Dataserial.readline()
